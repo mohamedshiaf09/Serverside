@@ -1,15 +1,12 @@
 # Ex.05 Design a Website for Server Side Processing
-## Date:
+## Date:24.09.25
 
 ## AIM:
  To design a website to calculate the power of a lamp filament in an incandescent bulb in the server side. 
 
 
 ## FORMULA:
-P = I<sup>2</sup>R
-<br> P --> Power (in watts)
-<br> I --> Intensity
-<br> R --> Resistance
+ bmi = weight_kg / (height_m * height_m)
 
 ## DESIGN STEPS:
 
@@ -32,13 +29,61 @@ Create a HTML file to implement form based input and output.
 Publish the website in the given URL.
 
 ## PROGRAM :
+```
+html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>BMI Calculator</title>
+</head>
+<body>
+    <form method="POST">
+  {% csrf_token %}
+  <label>Height (cm):</label>
+  <input type="text" name="height"><br>
+  <label>Weight (kg):</label>
 
+  <input type="text" name="weight"><br>
+
+  <button type="submit">Calculate</button>
+</form>
+
+{% if BMI %}
+  <h3>Your BMI is: {{ BMI }}</h3>
+{% endif %}
+</body>
+</html>
+views.py
+html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>BMI Calculator</title>
+</head>
+<body>
+    <form method="POST">
+  {% csrf_token %}
+  <label>Height (cm):</label>
+  <input type="text" name="height"><br>
+  <label>Weight (kg):</label>
+
+  <input type="text" name="weight"><br>
+
+  <button type="submit">Calculate</button>
+</form>
+
+{% if BMI %}
+  <h3>Your BMI is: {{ BMI }}</h3>
+{% endif %}
+</body>
+</html>
+```
 
 ## SERVER SIDE PROCESSING:
-
+![alt text](<Screenshot 2025-09-24 160440.png>)
 
 ## HOMEPAGE:
-
+![alt text](<Screenshot 2025-09-24 160019.png>)
 
 ## RESULT:
 The program for performing server side processing is completed successfully.
